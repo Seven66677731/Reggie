@@ -1,6 +1,11 @@
 server:
   port: 7777
 spring:
+  redis:
+    host: 192.168.77.128
+    password: 123456
+    port: 6379
+    database: 0
   application:
     name: reggie_take_out
   datasource:
@@ -21,3 +26,5 @@ mybatis-plus:
 
 reggie:
   path: D:\Programming\Java\Project\Reggie\imgFilePath\
+
+
