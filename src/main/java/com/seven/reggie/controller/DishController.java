@@ -189,11 +189,11 @@ public class DishController {
 
 
     @PostMapping("/status/{status}")
-    public R<String> updateStatus(@PathVariable int status, @RequestParam List<Long> ids) {
+    public R<String> updateStatus(@PathVariable int status, @RequestParam Long ids) {
         log.info("status:{}", status);
         log.info("ids:{}", ids);
         Dish dish = new Dish();
-
+        dish.setId(ids);
         dish.setStatus(status);
         dishService.updateById(dish);
 
