@@ -67,6 +67,5 @@ mybatis-plus:
 
 
 reggie:
-  path: D:\Programming\Java\Project\Reggie\imgFilePath\
-
+  path: /usr/local/img
 
