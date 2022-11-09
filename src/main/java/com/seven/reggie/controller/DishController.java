@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
 
 /**
  * 菜品管理
+ *
  * @author 22600
  */
 @RestController
@@ -184,5 +185,18 @@ public class DishController {
         redisTemplate.opsForValue().set(key, dishDtoList, 1, TimeUnit.HOURS);
 
         return R.success(dishDtoList);
+    }
+
+
+    @PostMapping("/status/{status}")
+    public R<String> updateStatus(@PathVariable int status, @RequestParam List<Long> ids) {
+        log.info("status:{}", status);
+        log.info("ids:{}", ids);
+        Dish dish = new Dish();
+
+        dish.setStatus(status);
+        dishService.updateById(dish);
+
+        return R.success("修改状态成功");
     }
 }
